@@ -17,3 +17,8 @@ print('list of columns in the movie table\n.',column_Names,'\n')
 
 cr.execute("SELECT * FROM movies")
 print(cr.fetchall())
+
+#pulls specific data
+cr.execute('SELECT title, director, year FROM movies WHERE year=?;',(2010,))
+movies_from_2010= cr.fetchall()
+print('movies from 2010:\n',movies_from_2010 )
